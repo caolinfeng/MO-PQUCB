@@ -211,12 +211,12 @@ a small complete run of every policy family.
 
 ```bibtex
 @InProceedings{pmlr-v337-cao26a,
-  title = 	 {Provably Efficient Personalized Multi-Objective Bandits with Proactive Conversational Queries},
-  author =       {Cao, Linfeng and Shi, Ming and Shroff, Ness},
-  booktitle = 	 {Proceedings of the 42nd Conference on Uncertainty in Artificial Intelligence},
-  pages = 	 {900--942},
-  year = 	 {2026},
-  volume = 	 {337},
-  publisher =    {PMLR}
+  title = {Provably Efficient Personalized Multi-Objective Bandits with Proactive Conversational Queries},
+  author = {Cao, Linfeng and Shi, Ming and Shroff, Ness},
+  booktitle = {Proceedings of the 42nd Conference on Uncertainty in Artificial Intelligence},
+  pages = {900--942},
+  year = {2026},
+  volume = {337},
+  publisher = {PMLR}
 }
 ```
