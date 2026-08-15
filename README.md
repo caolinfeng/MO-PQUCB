@@ -1,7 +1,7 @@
 # MO-PQUCB
 
 Reference implementation for **Provably Efficient Personalized
-Multi-Objective Bandits with Proactive Conversational Queries**.
+Multi-Objective Bandits with Proactive Conversational Queries (UAI26)**.
 
 MO-PQUCB learns objective rewards and user-specific preferences jointly. It
 uses top-*m* rankings from proactive queries through a Plackett--Luce model,
