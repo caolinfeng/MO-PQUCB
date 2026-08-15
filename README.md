@@ -1,4 +1,4 @@
-# 🎯 MO-PQUCB
+# 🕹️ MO-PQUCB
 
 Reference implementation for [**Provably Efficient Personalized
 Multi-Objective Bandits with Proactive Conversational Queries (UAI26)**](https://arxiv.org/pdf/2606.08410).
@@ -143,7 +143,7 @@ with user `u`, its budget is `conversation_rate * floor(log(n_u))`. Keyword
 feedback is a scalar utility observation evaluated on the same keyword context
 used by the regression update.
 
-## 💬 LLM conversational experiment
+## 🤖💬 LLM conversational experiment
 
 The LLM workflow first generates and checkpoints natural-language queries and
 inferred rankings, then evaluates the cached rankings offline. Set only the
@@ -205,7 +205,7 @@ Raw BeerAdvocate reviews and the TripAdvisor review corpus are omitted because
 of their size. The algorithms do not require them unless the processed arrays
 are regenerated.
 
-## ✅ Tests
+## </> Tests
 
 ```bash
 PYTHONPATH=src python -m unittest discover -s tests -v
