@@ -1,7 +1,8 @@
-# MO-PQUCB
+# 🎯 MO-PQUCB
 
-Reference implementation for **Provably Efficient Personalized
-Multi-Objective Bandits with Proactive Conversational Queries (UAI26)**.
+Reference implementation for [**Provably Efficient Personalized
+Multi-Objective Bandits with Proactive Conversational Queries (UAI26)**](https://arxiv.org/pdf/2606.08410).
+
 
 MO-PQUCB learns objective rewards and user-specific preferences jointly. It
 uses top-*m* rankings from proactive queries through a Plackett--Luce model,
@@ -14,29 +15,45 @@ command-line scripts in `scripts/`. Historical notebooks, their generated
 outputs, and machine-specific API settings are intentionally excluded from
 the repository.
 
-## Repository layout
+## 🗂️ Repository layout
 
 ```text
-configs/                   experiment configurations
-datasets/                  processed arrays used by real-world experiments
-scripts/
-  run_experiment.py        run one configured experiment
-  run_sweep.py             run top-m or corruption-rate ablations
-  generate_llm_rankings.py generate and checkpoint LLM rankings
-  run_llm_experiment.py    replay cached rankings without API calls
-src/mo_pqucb/
-  config.py                configuration loading and validation
-  environment.py           synthetic and real-world environments
-  llm_pipeline.py          provider-neutral two-simulator LLM pipeline
-  plackett_luce.py         online and robust PL estimators
-  policies.py              MO-PQUCB and baseline policies
-  runner.py                simulation, summaries, and plotting
-tests/                     unit and end-to-end smoke tests
-data/                      generated LLM caches (Git-ignored)
-results/                   generated figures and summaries (Git-ignored)
+MO-PQUCB/
+├── configs/                         # Experiment configurations
+│   ├── synthetic.json
+│   ├── synthetic_corrupt.json
+│   ├── tripadvisor.json
+│   ├── beeradvocate.json
+│   └── llm_tripadvisor.json
+├── datasets/                        # Processed real-world datasets
+│   ├── beeradvocate/
+│   │   ├── objective_preference_u14.npy
+│   │   └── objective_reward_u14.npy
+│   └── tripadvisor/
+│       ├── objective_preference_u10.npy
+│       └── objective_reward_item62.npy
+├── scripts/                         # Experiment entry points
+│   ├── run_experiment.py
+│   ├── run_sweep.py
+│   ├── generate_llm_rankings.py
+│   └── run_llm_experiment.py
+├── src/
+│   └── mo_pqucb/                    # Core Python package
+│       ├── config.py
+│       ├── environment.py
+│       ├── llm_pipeline.py
+│       ├── plackett_luce.py
+│       ├── policies.py
+│       └── runner.py
+├── tests/
+│   └── test_core.py
+├── data/                            # Generated LLM caches (Git-ignored)
+├── results/                         # Generated plots and summaries (Git-ignored)
+├── pyproject.toml
+└── README.md
 ```
 
-## Installation
+## ⚙️ Installation
 
 Python 3.9 or later is supported.
 
@@ -55,7 +72,7 @@ python -m pip install -e '.[llm]'
 Equivalent dependency files are provided as `requirements.txt` and
 `requirements-llm.txt`.
 
-## Running experiments
+## 🚀 Running experiments
 
 Run all baselines and MO-PQUCB on the synthetic configuration:
 
@@ -99,7 +116,7 @@ python scripts/run_sweep.py \
   --corruption-rates 0 0.1315633249 0.2 0.3 0.5
 ```
 
-## Configuration
+## 🧩 Configuration
 
 Each JSON file defines the random seed, horizon, number of runs, observed
 ranking length (`top_m`), algorithms, environment, per-algorithm overrides,
@@ -126,7 +143,7 @@ with user `u`, its budget is `conversation_rate * floor(log(n_u))`. Keyword
 feedback is a scalar utility observation evaluated on the same keyword context
 used by the regression update.
 
-## LLM conversational experiment
+## 💬 LLM conversational experiment
 
 The LLM workflow first generates and checkpoints natural-language queries and
 inferred rankings, then evaluates the cached rankings offline. Set only the
@@ -175,7 +192,7 @@ splits a ranking batch after persistent model failures. The LLM configuration
 also controls `temperature`, `batch_size`, `rank_corruption`, and
 `query_corruption`.
 
-## Data
+## 📊 Data
 
 The repository includes only the processed arrays needed by the real-world
 experiments:
@@ -188,7 +205,7 @@ Raw BeerAdvocate reviews and the TripAdvisor review corpus are omitted because
 of their size. The algorithms do not require them unless the processed arrays
 are regenerated.
 
-## Tests
+## ✅ Tests
 
 ```bash
 PYTHONPATH=src python -m unittest discover -s tests -v
@@ -198,7 +215,7 @@ The suite checks ranking validity, estimator identifiability, robust updates,
 deterministic environments, LLM response parsing, configuration loading, and
 a small complete run of every policy family.
 
-## Implemented algorithms
+## 🧠 Implemented algorithms
 
 - S-UCB and S-MOSS
 - Pareto-UCB and Pareto-TS
@@ -207,7 +224,7 @@ a small complete run of every policy family.
 - PRUCB
 - MO-PQUCB and robust MO-PQUCB-GL
 
-## Citation
+## 📝 Citation
 
 ```bibtex
 @InProceedings{pmlr-v337-cao26a,
