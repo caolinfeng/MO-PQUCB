@@ -210,12 +210,6 @@ a small complete run of every policy family.
 ## Citation
 
 ```bibtex
-@article{cao2026mopqucb,
-  title  = {Provably Efficient Personalized Multi-Objective Bandits with
-            Proactive Conversational Queries},
-  author = {Cao, Linfeng and Shi, Ming and Shroff, Ness B.},
-  year   = {2026}
-}
 @InProceedings{pmlr-v337-cao26a,
   title = 	 {Provably Efficient Personalized Multi-Objective Bandits with Proactive Conversational Queries},
   author =       {Cao, Linfeng and Shi, Ming and Shroff, Ness},
