@@ -85,17 +85,6 @@ The runner keeps per-round arrays in memory. It writes plots directly as
 `.npz` arrays. Curves show the mean and one standard error over independent
 runs.
 
-### Experiment mapping
-
-| Paper result | Configuration or command |
-| --- | --- |
-| Fig. 2(a), Fig. 5(a,b) | `configs/synthetic.json` |
-| Fig. 5(c,d) | top-*m* sweep below |
-| Fig. 2(b) | `configs/tripadvisor.json` |
-| Fig. 2(c) | `configs/beeradvocate.json` |
-| Fig. 2(d), Fig. 6 | `configs/synthetic_corrupt.json` |
-| Fig. 3 | `configs/llm_tripadvisor.json` and the LLM workflow below |
-
 Run appendix ablations without changing a configuration file:
 
 ```bash
@@ -226,5 +215,14 @@ a small complete run of every policy family.
             Proactive Conversational Queries},
   author = {Cao, Linfeng and Shi, Ming and Shroff, Ness B.},
   year   = {2026}
+}
+@InProceedings{pmlr-v337-cao26a,
+  title = 	 {Provably Efficient Personalized Multi-Objective Bandits with Proactive Conversational Queries},
+  author =       {Cao, Linfeng and Shi, Ming and Shroff, Ness},
+  booktitle = 	 {Proceedings of the 42nd Conference on Uncertainty in Artificial Intelligence},
+  pages = 	 {900--942},
+  year = 	 {2026},
+  volume = 	 {337},
+  publisher =    {PMLR}
 }
 ```
