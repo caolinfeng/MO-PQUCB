@@ -1,0 +1,43 @@
+{
+  "name": "paper_beeradvocate",
+  "seed": 1,
+  "horizon": 20000,
+  "runs": 10,
+  "top_m": 4,
+  "algorithms": [
+    "s_ucb",
+    "s_moss",
+    "pareto_ucb",
+    "pareto_ts",
+    "mo_oful",
+    "conucb",
+    "prucb",
+    "mo_pqucb"
+  ],
+  "environment": {
+    "type": "beeradvocate",
+    "num_users": 14,
+    "rewards_path": "datasets/beeradvocate/objective_reward_u14.npy",
+    "preferences_path": "datasets/beeradvocate/objective_preference_u14.npy",
+    "reward_std": 0.7071067811865476,
+    "preference_std": 0.7071067811865476
+  },
+  "algorithm_overrides": {
+    "s_ucb": {"confidence_scale": 1.6},
+    "s_moss": {"confidence_scale": 1.4},
+    "pareto_ucb": {"confidence_scale": 1.0},
+    "pareto_ts": {"posterior_scale": 1.0},
+    "mo_oful": {"regularization": 0.01, "epsilon": 1.0, "response_feature": "observed"},
+    "conucb": {"regularization": 0.1, "epsilon": 1.0, "keyword_subset_size": 3, "conversation_rate": 10.0},
+    "prucb": {"regularization": 0.01, "epsilon": 1.0, "omega": 2.0, "reward_scale": 0.05},
+    "mo_pqucb": {
+      "alpha": null,
+      "regularization": 0.01,
+      "ucb_mode": "empirical",
+      "epsilon": 1.0,
+      "reward_scale": 0.125,
+      "omega": 2.0
+    }
+  },
+  "output_dir": "results"
+}

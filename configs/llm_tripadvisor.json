@@ -1,0 +1,33 @@
+{
+  "name": "paper_llm_tripadvisor",
+  "seed": 1,
+  "horizon": 2000,
+  "runs": 5,
+  "top_m": 6,
+  "algorithms": ["mo_pqucb"],
+  "environment": {
+    "type": "tripadvisor",
+    "num_users": 10,
+    "rewards_path": "datasets/tripadvisor/objective_reward_item62.npy",
+    "preferences_path": "datasets/tripadvisor/objective_preference_u10.npy",
+    "reward_std": 0.7071067811865476,
+    "preference_std": 0.7071067811865476
+  },
+  "algorithm_overrides": {
+    "mo_pqucb": {
+      "alpha": null,
+      "regularization": 0.01,
+      "ucb_mode": "empirical",
+      "epsilon": 1.3,
+      "reward_scale": 0.1625,
+      "omega": 2.0
+    }
+  },
+  "llm": {
+    "temperature": 0.5,
+    "batch_size": 50,
+    "rank_corruption": 0.0,
+    "query_corruption": 0.0
+  },
+  "output_dir": "results"
+}

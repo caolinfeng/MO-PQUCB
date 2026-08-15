@@ -1,0 +1,51 @@
+{
+  "name": "paper_synthetic_corrupt_0.2",
+  "seed": 1,
+  "horizon": 2000,
+  "runs": 10,
+  "top_m": 20,
+  "algorithms": [
+    "s_ucb",
+    "s_moss",
+    "pareto_ucb",
+    "pareto_ts",
+    "mo_oful",
+    "conucb",
+    "prucb",
+    "mo_pqucb_gl"
+  ],
+  "environment": {
+    "type": "synthetic",
+    "num_arms": 40,
+    "num_users": 20,
+    "dimension": 20,
+    "available_size": 10,
+    "mean_distribution": "uniform",
+    "mean_range": [0.0, 5.0],
+    "preference_range": [0.0, 5.0],
+    "reward_std": 0.7071067811865476,
+    "preference_std": 0.7071067811865476,
+    "corruption_rate": 0.2
+  },
+  "algorithm_overrides": {
+    "s_ucb": {"confidence_scale": 1.0},
+    "s_moss": {"confidence_scale": 1.5},
+    "pareto_ucb": {"confidence_scale": 1.0},
+    "pareto_ts": {"posterior_scale": 1.0},
+    "mo_oful": {"regularization": 0.1, "epsilon": 0.1, "response_feature": "observed"},
+    "conucb": {"regularization": 0.1, "epsilon": 0.1, "keyword_subset_size": 3, "conversation_rate": 10.0},
+    "prucb": {"regularization": 0.1, "epsilon": 0.05, "omega": 10.0, "reward_scale": 0.05},
+    "mo_pqucb_gl": {
+      "alpha": 0.16578166246197596,
+      "regularization": 0.1,
+      "ucb_mode": "empirical",
+      "epsilon": 1.5,
+      "reward_scale": 0.05,
+      "omega": 5.0,
+      "group_lasso_penalty": 296.2962962962963,
+      "group_lasso_steps": 5,
+      "group_lasso_history": 50
+    }
+  },
+  "output_dir": "results"
+}

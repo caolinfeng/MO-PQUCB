@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mo-pqucb"
+version = "0.1.0"
+description = "MO-PQUCB for personalized multi-objective bandits with proactive queries"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "numpy>=1.21",
+  "matplotlib>=3.5"
+]
+
+[project.optional-dependencies]
+llm = [
+  "dashscope",
+  "google-genai",
+  "groq"
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
